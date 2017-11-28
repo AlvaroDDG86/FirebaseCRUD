@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HeroesService } from './services/heroes.service';
 import { KeysPipe } from './pipes/keys.pipe';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { KeysPipe } from './pipes/keys.pipe';
     APP_ROUTING,
     FormsModule
   ],
-  providers: [HeroesService],
+  providers: [HeroesService, {provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
